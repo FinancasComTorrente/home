@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Matheus Torrente - Links Oficiais. Fale comigo, conheça o App Torrente, leia o livro Do Zero à Liberdade e agende sua consultoria.">
+    <title>Matheus Torrente | Links e Ferramentas Oficiais</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles (going up one dir to assets) -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=1.4">
+
+    <!-- Specific Bio Styles -->
+    <style>
+        .bio-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bio-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bio-profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--color-accent);
+            box-shadow: 0 0 20px rgba(208, 167, 71, 0.3);
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .bio-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .bio-subtitle {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .bio-links-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .bio-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .bio-link-btn i {
+            position: absolute;
+            left: 1.5rem;
+            font-size: 1.4rem;
+            color: var(--color-accent);
+        }
+
+        .bio-link-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(208, 167, 71, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(208, 167, 71, 0.15);
+        }
+
+        .bio-link-btn.primary {
+            background: linear-gradient(135deg, rgba(208, 167, 71, 0.2) 0%, rgba(208, 167, 71, 0.05) 100%);
+            border-color: rgba(208, 167, 71, 0.5);
+        }
+
+        .bio-link-btn.primary:hover {
+            background: linear-gradient(135deg, rgba(208, 167, 71, 0.3) 0%, rgba(208, 167, 71, 0.1) 100%);
+            border-color: var(--color-accent);
+        }
+
+        .bio-footer {
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .bio-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-socials a {
+            color: var(--color-text-muted);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .bio-socials a:hover {
+            color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        .bio-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 400px;
+            opacity: 0.03;
+            filter: grayscale(100%) brightness(200%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/logo-icon.png">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Hotjar Tracking Code for Site Matheus Torrente -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 6659192, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body>
+
+    <div class="hero-bg-glow" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 0;">
+    </div>
+    <img src="../assets/images/logo-icon.png" alt="" class="bio-watermark">
+
+    <main class="bio-page">
+        <!-- Header Profile -->
+        <header class="bio-header">
+            <!-- Using the logo element in place of a profile photo for brand consistency, or could use an icon -->
+            <img src="../assets/images/logo-icon.png" alt="Matheus Torrente" class="bio-profile-img"
+                style="border-radius: 12px; padding: 15px; background: rgba(255,255,255,0.02)">
+            <h1 class="bio-title">Matheus <span class="text-gradient">Torrente</span></h1>
+            <p class="bio-subtitle">Consultoria de Investimentos & Educação Financeira Personalizada</p>
+        </header>
+
+        <!-- Links Container -->
+        <div class="bio-links-container">
+
+            <a href="https://wa.me/5569992162700?text=Eu%20vim%20do%20seu%20link%20na%20bio%20e%20gostaria%20de%20falar%20com%20voc%C3%AA"
+                class="bio-link-btn primary" target="_blank">
+                <i class="ph-fill ph-whatsapp-logo"></i>
+                Falar no WhatsApp
+            </a>
+
+            <a href="https://financascomtorrente.github.io/Consultoria-PVH/" class="bio-link-btn primary"
+                target="_blank">
+                <i class="ph-fill ph-briefcase"></i>
+                Agendar Consultoria
+            </a>
+
+            <a href="https://apptorrente.com.br" class="bio-link-btn" target="_blank">
+                <i class="ph-fill ph-device-mobile"></i>
+                App Torrente Finance
+            </a>
+
+            <a href="http://217.77.5.209/lp/" class="bio-link-btn" target="_blank">
+                <i class="ph-fill ph-rocket-launch"></i>
+                Green Pay (Em Breve)
+            </a>
+
+            <a href="https://financascomtorrente.github.io/DoZeroALiberdade/" class="bio-link-btn" target="_blank">
+                <i class="ph-fill ph-book-open-text"></i>
+                Livro: Do Zero à Liberdade
+            </a>
+
+            <a href="https://financascomtorrente.github.io/CrossBank/" class="bio-link-btn" target="_blank">
+                <i class="ph-fill ph-credit-card"></i>
+                Curso: Cross Bank
+            </a>
+
+            <a href="https://irpf-2026.vercel.app/" class="bio-link-btn primary" target="_blank">
+                <i class="ph-fill ph-file-text"></i>
+                Calculadora IRPF 2026
+            </a>
+
+            <a href="../produtos.html" class="bio-link-btn">
+                <i class="ph-fill ph-calculator"></i>
+                Ferramentas & Calculadoras
+            </a>
+
+            <a href="../index.html" class="bio-link-btn">
+                <i class="ph-fill ph-globe"></i>
+                Acessar Site Oficial
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bio-footer">
+            <div class="bio-socials">
+                <a href="https://instagram.com/Matheus_Torrente" target="_blank" aria-label="Instagram"><i
+                        class="ph-fill ph-instagram-logo"></i></a>
+                <a href="https://www.tiktok.com/@matheus_torrente" target="_blank" aria-label="TikTok"><i
+                        class="ph-fill ph-tiktok-logo"></i></a>
+                <a href="https://www.linkedin.com/in/matheus-torrente/" target="_blank" aria-label="LinkedIn"><i
+                        class="ph-fill ph-linkedin-logo"></i></a>
+                <a href="https://youtube.com/@financascomtorrente" target="_blank" aria-label="YouTube"><i
+                        class="ph-fill ph-youtube-logo"></i></a>
+                <a href="https://youtu.be/UicE5qEfNQU" target="_blank" aria-label="PodInvest"><i
+                        class="ph-fill ph-microphone-stage"></i></a>
+            </div>
+            <img src="../assets/images/logo-icon.png" alt="Matheus Torrente"
+                style="opacity: 0.5; margin-top: 15px; height: 35px; width: auto;">
+        </footer>
+    </main>
+
+    <!-- Using script for shared interactions if necessary -->
+    <script src="../assets/js/script.js?v=1.4"></script>
+</body>
+
+</html>
