@@ -167,35 +167,40 @@ document.addEventListener('DOMContentLoaded', () => {
             'Especialista em Investimentos',
             'Consultor Independente',
         ];
-        let tIndex = 0, cIndex = 0, deleting = false;
-        const cursor = document.createElement('span');
-        cursor.className = 'typed-cursor';
-        typingTarget.after(cursor);
 
-        const originalText = typingTarget.textContent;
-        typingTarget.textContent = '';
+        // On mobile, skip the animation to avoid truncation
+        if (window.innerWidth < 768) {
+            typingTarget.textContent = texts[0];
+        } else {
+            let tIndex = 0, cIndex = 0, deleting = false;
+            const cursor = document.createElement('span');
+            cursor.className = 'typed-cursor';
+            typingTarget.after(cursor);
 
-        function type() {
-            const current = texts[tIndex];
-            if (!deleting) {
-                typingTarget.textContent = current.slice(0, cIndex + 1);
-                cIndex++;
-                if (cIndex === current.length) {
-                    deleting = true;
-                    setTimeout(type, 2200);
-                    return;
+            typingTarget.textContent = '';
+
+            function type() {
+                const current = texts[tIndex];
+                if (!deleting) {
+                    typingTarget.textContent = current.slice(0, cIndex + 1);
+                    cIndex++;
+                    if (cIndex === current.length) {
+                        deleting = true;
+                        setTimeout(type, 2200);
+                        return;
+                    }
+                } else {
+                    typingTarget.textContent = current.slice(0, cIndex - 1);
+                    cIndex--;
+                    if (cIndex === 0) {
+                        deleting = false;
+                        tIndex = (tIndex + 1) % texts.length;
+                    }
                 }
-            } else {
-                typingTarget.textContent = current.slice(0, cIndex - 1);
-                cIndex--;
-                if (cIndex === 0) {
-                    deleting = false;
-                    tIndex = (tIndex + 1) % texts.length;
-                }
+                setTimeout(type, deleting ? 40 : 70);
             }
-            setTimeout(type, deleting ? 40 : 70);
+            type();
         }
-        type();
     }
 
     // ─────────────────────────────────────────
