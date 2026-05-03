@@ -1097,6 +1097,13 @@ h6 {
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.5);
     position: relative;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-img::after {
