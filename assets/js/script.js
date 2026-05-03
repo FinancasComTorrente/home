@@ -47,28 +47,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ─────────────────────────────────────────
-    // 4. Scroll Reveal — Intersection Observer
+    // 4. Premium Animation Engine (Lenis + GSAP)
     // ─────────────────────────────────────────
-    const revealSelectors = [
-        '.section-title', '.section-desc', '.service-card', '.product-card',
-        '.stat-item', '.sobre-image', '.sobre-content', '.contato-info',
-        '.contato-form-wrapper', '.hero-content', '.hero-image-wrapper',
-        '.service-detail-row', '.contato-lista li'
-    ];
-
-    document.querySelectorAll(revealSelectors.join(', ')).forEach(el => {
-        el.classList.add('hidden-reveal');
-    });
-
-    const revealObserver = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active-reveal');
-            obs.unobserve(entry.target);
+    // Initialize Lenis Smooth Scroll
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            lerp: 0.1, 
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll(revealSelectors.join(', ')).forEach(el => revealObserver.observe(el));
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+        
+        // Connect GSAP ScrollTrigger to Lenis
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+        }
+    }
+
+    // GSAP Scroll Reveal Animations
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        revealElements.forEach(el => {
+            let delay = 0;
+            if (el.classList.contains('reveal-delay-1')) delay = 0.1;
+            else if (el.classList.contains('reveal-delay-2')) delay = 0.2;
+            else if (el.classList.contains('reveal-delay-3')) delay = 0.3;
+
+            gsap.fromTo(el, 
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: delay,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+    }
 
     // ─────────────────────────────────────────
     // 5. Floating Particles (Hero + Page Headers)

@@ -33,6 +33,10 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <!-- Premium Animations -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -72,7 +76,7 @@
             <!-- Watermark Logo -->
             <img src="assets/images/logo-icon.png" alt="" class="bg-watermark" style="top: 40%;">
             <div class="container hero-container">
-                <div class="hero-content">
+                <div class="hero-content reveal">
                     <span class="badge">Estratégias de Alto Desempenho</span>
                     <h1 class="hero-title">Construa e proteja seu <span class="text-gradient">patrimônio</span> com
                         inteligência.</h1>
@@ -83,7 +87,7 @@
                         <a href="sobre.html" class="btn btn-secondary btn-large">Minha Trajetória</a>
                     </div>
                 </div>
-                <div class="hero-image-wrapper">
+                <div class="hero-image-wrapper reveal">
                     <!-- Placeholder for professional photo or abstract graphic -->
                     <div class="graphic-element">
                         <i class="ph-fill ph-trend-up"></i>
@@ -95,15 +99,15 @@
         <!-- Stats Section -->
         <section class="stats section pb-0">
             <div class="container stats-container">
-                <div class="stat-item">
+                <div class="stat-item reveal">
                     <h3 class="stat-number">+10<span class="highlight">k</span></h3>
                     <p class="stat-label">Alunos Impactados</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item reveal">
                     <h3 class="stat-number">+50<span class="highlight">M</span></h3>
                     <p class="stat-label">Sob Consultoria</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item reveal">
                     <h3 class="stat-number">8<span class="highlight">anos</span></h3>
                     <p class="stat-label">De Experiência no Mercado</p>
                 </div>
@@ -116,14 +120,14 @@
             <div class="container">
                 <div class="section-header text-center">
                     <span class="badge">Gestão Patrimonial</span>
-                    <h2 class="section-title">Soluções <span class="text-gradient">Personalizadas</span></h2>
-                    <p class="section-desc">Serviços desenhados exclusivamente para o seu perfil e momento de vida
+                    <h2 class="section-title reveal">Soluções <span class="text-gradient">Personalizadas</span></h2>
+                    <p class="section-desc reveal">Serviços desenhados exclusivamente para o seu perfil e momento de vida
                         financeiro, garantindo máxima eficiência e rentabilidade.</p>
                 </div>
 
                 <div class="services-grid">
                     <!-- Service 1 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon"><i class="ph-fill ph-target"></i></div>
                         <h3 class="service-title">Consultoria Personalizada</h3>
                         <p class="service-desc">Análise profunda da sua carteira de investimentos, ajustes de rota e
@@ -132,7 +136,7 @@
                                 class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <!-- Service 2 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon"><i class="ph-fill ph-bank"></i></div>
                         <h3 class="service-title">Gestão de Patrimônio</h3>
                         <p class="service-desc">Para investidores que buscam uma solução completa na alocação de ativos
@@ -141,7 +145,7 @@
                                 class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <!-- Service 3 CTA -->
-                    <div class="service-card"
+                    <div class="service-card reveal glass-card gold-glow"
                         style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary)); border: 1px solid rgba(208, 167, 71, 0.3);">
                         <h3 class="service-title" style="margin-bottom: 2rem;">Veja Todas as Nossas Soluções</h3>
                         <a href="servicos.html" class="btn btn-primary">Ver Catálogo <i
@@ -156,14 +160,14 @@
             <div class="container">
                 <div class="section-header text-center">
                     <span class="badge">Educação Financeira</span>
-                    <h2 class="section-title">Nossos <span class="text-gradient">Programas</span></h2>
-                    <p class="section-desc">Formação prática para quem deseja assumir o controle dos seus investimentos.
+                    <h2 class="section-title reveal">Nossos <span class="text-gradient">Programas</span></h2>
+                    <p class="section-desc reveal">Formação prática para quem deseja assumir o controle dos seus investimentos.
                     </p>
                 </div>
 
                 <div class="products-grid">
                     <!-- Product 1 -->
-                    <div class="product-card">
+                    <div class="product-card reveal glass-card gold-glow">
                         <div class="product-img">
                             <i class="ph-fill ph-video-camera"></i>
                         </div>
@@ -177,7 +181,7 @@
                         </div>
                     </div>
                     <!-- Product 2 -->
-                    <div class="product-card">
+                    <div class="product-card reveal glass-card gold-glow">
                         <div class="product-img">
                             <i class="ph-fill ph-users-three"></i>
                         </div>
@@ -197,15 +201,15 @@
         <section id="ferramentas" class="services section bg-darker">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">Ferramentas <span class="text-gradient">Gratuitas</span></h2>
-                    <p class="section-desc">Utilize nossas calculadoras e testes para dar o primeiro passo na
+                    <h2 class="section-title reveal">Ferramentas <span class="text-gradient">Gratuitas</span></h2>
+                    <p class="section-desc reveal">Utilize nossas calculadoras e testes para dar o primeiro passo na
                         organização
                         da sua vida financeira.</p>
                 </div>
 
                 <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                     <!-- Tool 1 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon">
                             <i class="ph-fill ph-calculator"></i>
                         </div>
@@ -219,7 +223,7 @@
                     </div>
 
                     <!-- Tool 2 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon">
                             <i class="ph-fill ph-target"></i>
                         </div>
@@ -233,7 +237,7 @@
                     </div>
 
                     <!-- Tool 3 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon">
                             <i class="ph-fill ph-shield-check"></i>
                         </div>
@@ -247,7 +251,7 @@
                     </div>
 
                     <!-- Tool 4: Calculadora IRPF 2026 -->
-                    <div class="service-card">
+                    <div class="service-card reveal glass-card gold-glow">
                         <div class="service-icon">
                             <i class="ph-fill ph-file-text"></i>
                         </div>
@@ -267,8 +271,8 @@
         <section id="conteudos" class="section">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">Insights & <span class="text-gradient">Conteúdos</span></h2>
-                    <p class="section-desc">Acompanhe minhas análises semanais no YouTube e os bastidores das mentorias
+                    <h2 class="section-title reveal">Insights & <span class="text-gradient">Conteúdos</span></h2>
+                    <p class="section-desc reveal">Acompanhe minhas análises semanais no YouTube e os bastidores das mentorias
                         no Instagram.</p>
                 </div>
 
@@ -334,8 +338,8 @@
             <div class="cta-glow"></div>
             <div class="container">
                 <div class="cta-content text-center">
-                    <h2 class="section-title">Pronto para elevar seus resultados?</h2>
-                    <p class="section-desc mx-auto">Entre em contato agora e agende uma sessão de diagnóstico
+                    <h2 class="section-title reveal">Pronto para elevar seus resultados?</h2>
+                    <p class="section-desc mx-auto reveal">Entre em contato agora e agende uma sessão de diagnóstico
                         estratégico com a minha equipe.</p>
                     <a href="contato.html" class="btn btn-primary btn-large cta-btn">Falar com a Equipe <i
                             class="ph-bold ph-arrow-right"></i></a>
